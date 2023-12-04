@@ -1,0 +1,16 @@
+from scipy.stats import mannwhitneyu
+
+# クラスAとクラスBの身長データ（例としてランダムなデータを使用）
+height_class_A = [165, 170, 172, 175, 178, 180, 182]
+height_class_B = [160, 165, 168, 171, 175, 177, 179]
+
+# クラスAとクラスBの体重データ（例としてランダムなデータを使用）
+weight_class_A = [60, 65, 68, 70, 72, 75, 78]
+weight_class_B = [55, 60, 63, 66, 69, 72, 75]
+
+# Mann-Whitney U検定
+statistic, p_value = mannwhitneyu(height_class_A, height_class_B)
+print(f"Mann-Whitney U 検定（身長）:\n統計量 = {statistic}\np値 = {p_value}")
+
+statistic, p_value = mannwhitneyu(weight_class_A, weight_class_B)
+print(f"Mann-Whitney U 検定（体重）:\n統計量 = {statistic}\np値 = {p_value}")
